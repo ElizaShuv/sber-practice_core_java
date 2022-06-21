@@ -1,3 +1,5 @@
+package ru.sber.base.syntax;
+
 public class Task5 {
     public static void main(String[] args) {
         boolean PrimeNum;

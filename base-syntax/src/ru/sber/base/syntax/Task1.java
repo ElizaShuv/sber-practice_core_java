@@ -1,3 +1,5 @@
+package ru.sber.base.syntax;
+
 public class Task1 {
     public static void main(String[] args) {
         int[] arr = new int[]{5, 2, 9, 6, 3, 1, 8, 0, 7, 4};

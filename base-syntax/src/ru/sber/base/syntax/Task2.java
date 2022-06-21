@@ -1,3 +1,5 @@
+package ru.sber.base.syntax;
+
 public class Task2 {
     public static void quickSort(int[] arr, int left, int right) {
         int middle = left + (right - left) / 2;

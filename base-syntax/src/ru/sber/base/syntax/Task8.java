@@ -1,3 +1,5 @@
+package ru.sber.base.syntax;
+
 import java.util.Scanner;
 
 public class Task8 {
