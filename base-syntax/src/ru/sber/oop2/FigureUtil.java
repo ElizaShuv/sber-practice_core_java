@@ -1,5 +1,4 @@
 package ru.sber.oop2;
-
 public class FigureUtil {
     private FigureUtil(){
     };

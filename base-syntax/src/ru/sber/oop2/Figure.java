@@ -1,5 +1,4 @@
 package ru.sber.oop2;
-
 public abstract class Figure implements Drawable{
     Point point;
    String figureName;

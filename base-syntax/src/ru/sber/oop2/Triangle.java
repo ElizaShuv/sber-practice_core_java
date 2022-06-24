@@ -1,5 +1,4 @@
 package ru.sber.oop2;
-
 public class Triangle extends Figure{
     private double aSide;
     private double bSide;

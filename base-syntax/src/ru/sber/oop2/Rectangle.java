@@ -1,5 +1,4 @@
 package ru.sber.oop2;
-
 public class Rectangle extends Figure{
     private double width;
     private double height;

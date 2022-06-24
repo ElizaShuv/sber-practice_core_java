@@ -1,5 +1,4 @@
 package ru.sber.oop2;
-
 public class PaintExample {
     public static void main(String[] args) {
         Point cPoint = new Point(1, 2);
