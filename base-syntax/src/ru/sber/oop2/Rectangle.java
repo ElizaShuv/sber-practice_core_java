@@ -2,7 +2,6 @@ package ru.sber.oop2;
 public class Rectangle extends Figure{
     private double width;
     private double height;
-
     public Rectangle(Point point, double width, double height) {
         super(point, (width == height ? "квадрат": "прямоугольник"));
         this.width = width;

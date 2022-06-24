@@ -3,7 +3,6 @@ public class Triangle extends Figure{
     private double aSide;
     private double bSide;
     private double cSide;
-
     public Triangle(Point point, double aSide, double bSide, double cSide) {
         super(point, "треугольник");
         this.aSide = aSide;

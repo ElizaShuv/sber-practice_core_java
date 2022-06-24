@@ -22,7 +22,6 @@ public class Circle extends Figure{
     public void draw(){
         System.out.println(String.format("Нарисован %s черного цвета с центром в координатах (%s, %s)", figureName, point.getX(),point.getY()));
     }
-
     @Override
     public void draw(Color color){
         System.out.println(String.format("Нарисован %s %s цвета с центром в координатах (%s, %s)", figureName, figureColor(color), point.getX(),point.getY()));
@@ -35,7 +34,5 @@ public class Circle extends Figure{
     public void setRadius(double radius) {
         this.radius = radius;
     }
-
-
 
 }

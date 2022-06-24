@@ -1,6 +1,7 @@
 package ru.sber.oop2;
 public class PaintExample {
     public static void main(String[] args) {
+
         Point cPoint = new Point(1, 2);
         Circle circle = new Circle(cPoint, 8.0);
         System.out.println(String.format("'%s'\nРадиус: %s \nПлощадь: %s \nПериметр: %s", circle.figureName,circle.getRadius(),circle.area(), circle.perimeter()));
