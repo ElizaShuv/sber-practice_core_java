@@ -33,15 +33,15 @@ public class BankOnline {
         }
     }
 
-    public void send(String cardNumber, Double money) {
+    public void send(String cardNumber, Double money) throws NegativeTransferException, NullInformationException, InvalidCardNumberException, OutOfLimitTransferException, BlockedCardException{
 
-        try {
             if (cardNumber == null) {
                 throw new NullInformationException("Ошибка перевода: Не указан номер карты");
             }
             if (money == null) {
                 throw new NullInformationException("Ошибка перевода: Не указана сумма перевода");
             }
+
             String cardNumberFormat = cardNumber.replaceAll(" ", "");
             if (cardNumberFormat.length() != 16 || !isNumber(cardNumberFormat)) {
                 throw new InvalidCardNumberException("Ошибка перевода: Неправильно указан номер карты");
@@ -56,21 +56,5 @@ public class BankOnline {
                 throw new BlockedCardException("Ошибка перевода: Карта заблокирована");
             }
             System.out.println(String.format("Перевод на карту (%s) выполнен. \nСумма перевода: %s", cardNumber, money));
-        } catch (InvalidCardNumberException invalidCardNumber) {
-            System.out.println(invalidCardNumber.getMessage());
-            invalidCardNumber.printStackTrace();
-        } catch (NegativeTransferException negativeTransfer) {
-            System.out.println(negativeTransfer.getMessage());
-            negativeTransfer.printStackTrace();
-        } catch (OutOfLimitTransferException limitTransfer) {
-            System.out.println(limitTransfer.getMessage());
-            limitTransfer.printStackTrace();
-        } catch (NullInformationException nullInformation) {
-            System.out.println(nullInformation.getMessage());
-            nullInformation.printStackTrace();
-        } catch (BlockedCardException blockedCard) {
-            System.out.println(blockedCard.getMessage());
-            blockedCard.printStackTrace();
-        }
     }
 }
