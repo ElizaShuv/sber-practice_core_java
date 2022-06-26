@@ -16,18 +16,18 @@ try {
         /*bank.send(cardName2, null);
         System.out.println(); */
 
-    /*  bank.send(null, 1_000.0);
+        /*bank.send(null, 1_000.0);
         System.out.println();*/
 
-    /*  String cardName3 = "1222 2222 2222 2222";
+        /*String cardName3 = "1222 2222 2222 2222";
         bank.send(cardName3, -10_000.0);
         System.out.println();*/
 
-    /*  String cardName4 = "1223 2223 2223 2222";
+        /*String cardName4 = "1223 2223 2223 2222";
         bank.send(cardName4, 100_000.0);
         System.out.println(); */
 
-    /* String cardName5 = "2222 2222 2222 2222";
+        /*String cardName5 = "2222 2222 2222 2222";
        bank.send(cardName5, 10_000.0);
        System.out.println(); */
 
