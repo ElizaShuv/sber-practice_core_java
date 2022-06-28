@@ -3,7 +3,6 @@ import java.util.Arrays;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
 public class SortNames {
     public static final String ORIGINAL_PATH = "base-syntax/src/ru/sber/javaIO/SortNames/listNames.txt";
     public static final String SORTED_PATH = "base-syntax/src/ru/sber/javaIO/SortNames/SortListNames.txt";

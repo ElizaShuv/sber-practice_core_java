@@ -5,7 +5,6 @@ import ru.sber.javaIO.SaveLoad.Speed.HighSpeed;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-
 public class Save {
     public static void main(String[] args) throws IOException {
         Racer racer = new Racer("Gamer1");

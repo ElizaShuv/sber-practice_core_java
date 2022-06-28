@@ -5,10 +5,8 @@ import java.nio.file.Paths;
 import java.nio.file.Files;
 
 public class RemovingSpaces {
-
     public static final String ORIGINAL_PATH = "base-syntax/src/ru/sber/javaIO/RemovingSpaces/Borodino.txt";
     public static final String REMOVING_PATH = "base-syntax/src/ru/sber/javaIO/RemovingSpaces/NewBorodino.txt";
-
     public static void main(String[] args) throws IOException {
 
         try (BufferedReader fileInputStream = Files.newBufferedReader(Paths.get(ORIGINAL_PATH));

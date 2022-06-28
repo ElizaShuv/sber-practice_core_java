@@ -4,7 +4,6 @@ import ru.sber.javaIO.SaveLoad.Speed.Speed;
 import ru.sber.javaIO.SaveLoad.Speed.LowSpeed;
 import ru.sber.javaIO.SaveLoad.ImpactResistance.ImpactResistance;
 import ru.sber.javaIO.SaveLoad.ImpactResistance.WeakStrength;
-
 import java.io.Serializable;
 public class Racer implements Serializable {
     String name;
