@@ -4,12 +4,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 public class Load {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        try (FileInputStream fileInputStream = new FileInputStream("JavaIO/src/ru/sber/javaio/SaveAndLoad/files/save.txt");
+        try (FileInputStream fileInputStream = new FileInputStream("base-syntax/src/ru/sber/javaIO/SaveLoad/Save.txt");
              ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)
         ) {
-            Racer hero = (Racer) objectInputStream.readObject();
+            Racer racer = (Racer) objectInputStream.readObject();
 
-            System.out.println(hero);
+            System.out.println(racer);
         }
     }
 }
