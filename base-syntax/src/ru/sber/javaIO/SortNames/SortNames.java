@@ -7,7 +7,6 @@ import java.nio.file.Paths;
 public class SortNames {
     public static final String ORIGINAL_PATH = "base-syntax/src/ru/sber/javaIO/SortNames/listNames.txt";
     public static final String SORTED_PATH = "base-syntax/src/ru/sber/javaIO/SortNames/SortListNames.txt";
-
     public static void main(String[] args) throws IOException {
     try (BufferedReader fileInputStream = Files.newBufferedReader(Paths.get(ORIGINAL_PATH));
          BufferedWriter fileOutputStream = Files.newBufferedWriter(Paths.get(SORTED_PATH))){
