@@ -9,7 +9,6 @@ import java.io.ObjectOutputStream;
 public class Save {
     public static void main(String[] args) throws IOException {
         Racer racer = new Racer("Gamer1");
-
         System.out.println(racer);
 
         racer.setLvl(10);
