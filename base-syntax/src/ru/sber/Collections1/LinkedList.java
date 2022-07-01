@@ -294,6 +294,6 @@ public class LinkedList implements List, Deque {
 
     @Override
     public String toString() {
-        return String.format("LinkedList = %s", print());
+        return  print();
     }
 }

@@ -171,6 +171,6 @@ public class ArrayList implements List {
 
     @Override
     public String toString() {
-        return String.format("ArrayList = %s", printArrayList());
+        return printArrayList();
     }
 }
