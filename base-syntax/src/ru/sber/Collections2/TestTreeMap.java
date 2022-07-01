@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
 
 public class TestTreeMap {
     public static void main(String[] args) {
-        TreeMap treeMap = new TreeMap();
+        TreeMap<String, String> treeMap = new TreeMap<>();
 try {
 
         System.out.println("Дерево пустое: " + treeMap.isEmpty());
@@ -15,7 +15,7 @@ try {
 
 
         System.out.print("Вывод дерева после добавления элементов:");
-        for (Object element : treeMap.entrySet()) {
+        for (Entry<String,String> element : treeMap.entrySet()) {
             System.out.print(element);
         }
 
@@ -35,7 +35,7 @@ try {
         treeMap.remove("1");
 
         System.out.print("Вывод элементов дерева после удаления элемента с ключом '1':");
-        for (Object element : treeMap.entrySet()) {
+        for (Entry<String,String>  element : treeMap.entrySet()) {
             System.out.print(element);
         }
 
@@ -47,7 +47,7 @@ try {
         System.out.println("Размер дерева после очистки = " + treeMap.size());
 
         System.out.println("Вывод дерева после очистки: ");
-        for (Object element : treeMap.entrySet()) {
+        for (Entry<String,String>  element : treeMap.entrySet()) {
             System.out.println(element);
         }
         }catch (NullPointerException exceptionNullPointer) {

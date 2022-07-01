@@ -1,9 +1,9 @@
 package ru.sber.Collections2;
 
 
-public class TestHashMap extends HashMap {
+public class TestHashMap {
     public static void main(String[] args) {
-        HashMap hashMap = new HashMap();
+        HashMap<String, String> hashMap = new HashMap<>();
 
         hashMap.put("1", "Один");
         hashMap.put("2", "Два");

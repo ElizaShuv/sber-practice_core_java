@@ -3,7 +3,7 @@ import java.util.NoSuchElementException;
 
 public class LinkedListTest {
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
+        LinkedList<Integer> linkedList = new LinkedList<>();
 
         try {
             System.out.println(String.format("Является ли список пустым: %s",linkedList.isEmpty()));

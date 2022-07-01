@@ -1,10 +1,10 @@
 package ru.sber.Collections1;
 import java.util.*;
-public class ListIterator implements Iterator<Object>{
-    private List List;
+public class ListIterator<E> implements Iterator<E>{
+    private List<E> List;
     private int i;
 
-    public ListIterator(List List) {
+    public ListIterator(List<E> List) {
         this.List = List;
         this.i = 0;
     }
@@ -15,7 +15,7 @@ public class ListIterator implements Iterator<Object>{
     }
 
     @Override
-    public Object next() throws NoSuchElementException {
+    public E next() throws NoSuchElementException {
         if (!hasNext()) {throw new NoSuchElementException("Пустой список");}
         i++;
         return(List.get(i - 1));

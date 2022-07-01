@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
 public class ArrayListTest {
     public static void main(String[] args) {
 
-        ArrayList arrayList = new ArrayList();
+        ArrayList<Integer> arrayList = new ArrayList<>();
 
         try {
             System.out.println(String.format("Является ли список пустым: %s",arrayList.isEmpty()));
@@ -51,12 +51,9 @@ public class ArrayListTest {
 
             System.out.println(String.format("Элемент с индексом 5: %s",arrayList.get(5)));
 
-        } catch (NoSuchElementException exceptionNoSuchElement) {
-            System.out.println(exceptionNoSuchElement.getMessage());
-            exceptionNoSuchElement.printStackTrace();
-        } catch (IndexOutOfBoundsException exceptionIndexOutOfBounds) {
-            System.out.println(exceptionIndexOutOfBounds.getMessage());
-            exceptionIndexOutOfBounds.printStackTrace();
+        } catch (NullPointerException exceptionNullPointer) {
+            System.out.println(exceptionNullPointer.getMessage());
+            exceptionNullPointer.printStackTrace();
         }
     }
 }

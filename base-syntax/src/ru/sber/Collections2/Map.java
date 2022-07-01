@@ -1,25 +1,25 @@
 package ru.sber.Collections2;
 import ru.sber.Collections1.Collection;
-public interface Map {
+public interface Map<K, V> {
     int size();
 
     boolean isEmpty();
 
-    boolean containsKey(Object key);
+    boolean containsKey(K key);
 
-    boolean containsValue(Object value);
+    boolean containsValue(V value);
 
-    Object get(Object key);
+    V get(K key);
 
-    Object put(Object key, Object value);
+    Entry<K, V> put(K key, V value);
 
-    Object remove(Object key);
+    V remove(K key);
 
     void clear();
 
-    Collection values();
+    Collection<V> values();
 
-    Collection keySet();
+    Collection<K> keySet();
 
-    Collection entrySet();
+    Collection<Entry<K, V>> entrySet();
 }

@@ -1,12 +1,11 @@
 package ru.sber.Collections2;
 import ru.sber.Collections1.*;
 
-import java.util.Arrays;
 
-public class TreeMap implements Map {
+public class TreeMap<K,V> implements Map<K,V> {
 
     private int size;
-    private Node nodeRoot;
+    private Node<Entry<K,V>> nodeRoot;
     private boolean searchValue = false;
 
     public TreeMap() {
@@ -14,13 +13,13 @@ public class TreeMap implements Map {
         size = 0;
     }
 
-    private Object getKey(Node node) {
-        return ((Entry) node.getValue()).getKey();
+    private K getKey(Node<Entry<K,V>> node) {
+        return node.getValue().getKey();
     }
 
 
-    private Object getValue(Node node) {
-        return ((Entry) node.getValue()).getValue();
+    private V getValue(Node<Entry<K,V>>  node) {
+        return node.getValue().getValue();
     }
 
 
@@ -36,12 +35,12 @@ public class TreeMap implements Map {
     }
 
     @Override
-    public boolean containsKey(Object key) {
+    public boolean containsKey(K key) {
         searchValue = false;
         return searchKey(nodeRoot, key);
     }
 
-    private boolean searchKey(Node child, Object key) {
+    private boolean searchKey(Node<Entry<K,V>>  child, K key) {
         if (key.equals(getKey(child))) {
             searchValue = true;
         }
@@ -55,13 +54,13 @@ public class TreeMap implements Map {
     }
 
     @Override
-    public boolean containsValue(Object value) {
+    public boolean containsValue(V value) {
         searchValue = false;
         return searchValue(nodeRoot, value);
 
     }
 
-    private boolean searchValue(Node child, Object value) {
+    private boolean searchValue(Node<Entry<K,V>>  child, V value) {
         try {
             if (getValue(child).equals(value)) {
                 searchValue = true;
@@ -81,8 +80,8 @@ public class TreeMap implements Map {
     }
 
     @Override
-    public Object get(Object key) {
-        Node child = nodeRoot;
+    public V get(K key) {
+        Node<Entry<K,V>>  child = nodeRoot;
         while (true) {
             if (key.equals(getKey(child))) {
                 return getValue(child);
@@ -101,44 +100,44 @@ public class TreeMap implements Map {
     }
 
     @Override
-    public Entry put(Object key, Object value) {
-        Node newNode = new Node(new Entry(key, value));
+    public Entry<K,V>  put(K key, V value) {
+        Node<Entry<K,V>>  newNode = new Node<>(new Entry<>(key, value));
         if (nodeRoot == null) {
             size++;
             nodeRoot = newNode;
         } else {
-            Node parent;
-            Node child = nodeRoot;
+            Node<Entry<K,V>>  parent;
+            Node<Entry<K,V>>  child = nodeRoot;
             while (true) {
                 parent = child;
                 if (getKey(child).equals(key)) {
-                    child.setValue(new Entry(key, value));
-                    return (Entry) newNode.getValue();
+                    child.setValue(new Entry<>(key, value));
+                    return newNode.getValue();
                 } else if (key.hashCode() < getKey(child).hashCode()) {
                     child = child.getLeft();
                     if (child == null) {
                         parent.setLeft(newNode);
                         size++;
 
-                        return (Entry) newNode.getValue();
+                        return  newNode.getValue();
                     }
                 } else {
                     child = child.getRight();
                     if (child == null) {
                         parent.setRight(newNode);
                         size++;
-                        return (Entry) newNode.getValue();
+                        return  newNode.getValue();
                     }
                 }
             }
         }
-        return (Entry) newNode.getValue();
+        return newNode.getValue();
     }
 
     @Override
-    public Object remove(Object key) {
-        Node currentNode = nodeRoot;
-        Node parentNode = nodeRoot;
+    public V remove(K key) {
+        Node<Entry<K,V>> currentNode = nodeRoot;
+        Node<Entry<K,V>> parentNode = nodeRoot;
 
         boolean isLeft = true;
 
@@ -181,7 +180,7 @@ public class TreeMap implements Map {
                 parentNode.setRight(currentNode.getRight());
             }
         } else {
-            Node heir = replaceNode(currentNode);
+            Node<Entry<K,V>> heir = replaceNode(currentNode);
             if (currentNode == nodeRoot) {
                 nodeRoot = heir;
             } else if (isLeft) {
@@ -194,9 +193,9 @@ public class TreeMap implements Map {
         return getValue(currentNode);
     }
 
-    private Node replaceNode(Node node) {
-        Node heirNode = node;
-        Node curNode = node.getRight();
+    private Node<Entry<K,V>> replaceNode(Node<Entry<K,V>> node) {
+        Node<Entry<K,V>> heirNode = node;
+        Node<Entry<K,V>> curNode = node.getRight();
         while (curNode != null) {
             heirNode = curNode;
             curNode = curNode.getLeft();
@@ -215,13 +214,13 @@ public class TreeMap implements Map {
     }
 
     @Override
-    public Collection values() {
-        ArrayList arrayList = new ArrayList();
+    public Collection<V> values() {
+        ArrayList<V> arrayList = new ArrayList<>();
         addValue(nodeRoot, arrayList);
         return arrayList;
     }
 
-    private void addValue(Node child, ArrayList arrayList) {
+    private void addValue(Node<Entry<K,V>> child, ArrayList<V> arrayList) {
         arrayList.add(getValue(child));
         if (child.getLeft() != null) {
             addValue(child.getLeft(), arrayList);
@@ -232,38 +231,38 @@ public class TreeMap implements Map {
     }
 
     @Override
-    public Collection keySet() {
-        ArrayList arrayList = new ArrayList();
+    public Collection<K> keySet() {
+        ArrayList<K> arrayList = new ArrayList<>();
         addKey(nodeRoot, arrayList);
         return arrayList;
     }
 
-    private void addKey(Node child, ArrayList li) {
-        li.add(getKey(child));
+    private void addKey(Node<Entry<K,V>> child, ArrayList<K> list) {
+        list.add(getKey(child));
         if (child.getLeft() != null) {
-            addKey(child.getLeft(), li);
+            addKey(child.getLeft(), list);
         }
         if (child.getRight() != null) {
-            addKey(child.getRight(), li);
+            addKey(child.getRight(), list);
         }
     }
 
     @Override
-    public Collection entrySet() throws NullPointerException  {
-        ArrayList arrayList = new ArrayList();
+    public Collection<Entry<K,V>> entrySet() throws NullPointerException  {
+        ArrayList<Entry<K,V>> arrayList = new ArrayList<>();
         if (size==0) throw new NullPointerException("Ошибка. Дерево пустое");
         addEntry(nodeRoot, arrayList);
         return arrayList;
     }
 
-    private void addEntry(Node child, ArrayList li) {
+    private void addEntry(Node<Entry<K,V>> child, ArrayList<Entry<K,V>> list) {
 
-        li.add(child.getValue());
+        list.add(child.getValue());
 
         if (child.getLeft() != null)
-            addEntry(child.getLeft(), li);
+            addEntry(child.getLeft(), list);
 
         if (child.getRight() != null)
-            addEntry(child.getRight(), li);
+            addEntry(child.getRight(), list);
     }
 }

@@ -1,37 +1,37 @@
 package ru.sber.Collections2;
 
-public class Node {
-    private Object value;
-    private Node left;
-    private Node right;
+public class Node<E> {
+    private E value;
+    private Node<E> left;
+    private Node<E> right;
 
-    Node(Object value) {
+    Node(E value) {
         this.value = value;
         right = null;
         left = null;
     }
 
-    public Object getValue() {
+    public E getValue() {
         return value;
     }
 
-    public void setValue(Object value) {
+    public void setValue(E value) {
         this.value = value;
     }
 
-    public Node getLeft() {
+    public Node<E> getLeft() {
         return left;
     }
 
-    public void setLeft(Node left) {
+    public void setLeft(Node<E> left) {
         this.left = left;
     }
 
-    public Node getRight() {
+    public Node<E> getRight() {
         return right;
     }
 
-    public void setRight(Node right) {
+    public void setRight(Node<E> right) {
         this.right = right;
     }
 }
