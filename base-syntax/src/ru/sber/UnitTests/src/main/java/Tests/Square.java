@@ -1,8 +1,7 @@
 package Tests;
 
 public class Square extends DrawFigure{
-    public double side;
-    public String figureName = "квадрат";
+    protected String figureName = "квадрат";
 
     public double setSide(double side) {
         return side;

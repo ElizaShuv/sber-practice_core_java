@@ -2,7 +2,7 @@ package Tests;
 
 public class DrawFigure  {
 
-    String color;
+    private String color;
 
     public String draw(String color, String figureName){
         return String.format("%s %s нарисован", color, figureName);
