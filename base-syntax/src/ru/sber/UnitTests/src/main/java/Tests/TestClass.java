@@ -1,4 +1,4 @@
-package Tests;
+package tests;
 
 public class TestClass extends Square{
 

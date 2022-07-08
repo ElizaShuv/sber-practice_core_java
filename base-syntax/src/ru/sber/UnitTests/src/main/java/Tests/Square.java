@@ -1,4 +1,4 @@
-package Tests;
+package tests;
 
 public class Square extends DrawFigure{
     protected String figureName = "квадрат";
