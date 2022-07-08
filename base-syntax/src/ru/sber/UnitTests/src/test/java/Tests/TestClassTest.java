@@ -13,7 +13,7 @@ public class TestClassTest {
     private final static String TESTED_DELETE = "Фигура удалена" ;
     private final static double TESTED_AREA = 25.0;
     private final static double TESTED_PERIMETER = 20.0;
-    final TestClass testClass = new TestClass();
+   private final static TestClass testClass = new TestClass();
 
     @Test
     public void firstTest(){
