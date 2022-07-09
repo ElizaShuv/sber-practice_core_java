@@ -1,14 +1,13 @@
 package tests;
 
-public class DrawFigure  {
-
+public class DrawFigure {
     private String color;
 
-    public String draw(String color, String figureName){
+    public String draw(String color, String figureName) {
         return String.format("%s %s нарисован", color, figureName);
     }
 
-    public String delete(){
+    public String delete() {
         return "Фигура удалена";
     }
 

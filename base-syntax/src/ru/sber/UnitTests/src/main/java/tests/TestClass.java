@@ -1,24 +1,22 @@
 package tests;
 
-public class TestClass extends Square{
-
-    public double SquareArea(double side){
+public class TestClass extends Square {
+    public double squareArea(double side) {
         return  area(side);
     }
 
-    public double SquarePerimeter(double side){
+    public double squarePerimeter(double side) {
         return  perimeter(side);
     }
 
-    public double ChangeSide (double n){
+    public double changeSide (double n) {
         return setSide(n);
     }
 
-    private String SquareDraw(String color){
-        return draw(color,figureName);
+    private String squareDraw(String color) {
+        return draw(color,getFigureName());
     }
-
-    public String SquareDelete(){
+    public String squareDelete() {
         return delete();
     }
 }
