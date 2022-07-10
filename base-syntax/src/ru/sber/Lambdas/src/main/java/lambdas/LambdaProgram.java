@@ -7,7 +7,7 @@ public class LambdaProgram {
     }
 
     public static String getMessage(MessageFunctionInterface<String> message) {
-        return message.get("");
+        return message.get(MessageFunctionInterface.S);
     }
 
     public static String changeWord(String s1, String s2, ChangeFunctionInterface word) {
@@ -15,19 +15,18 @@ public class LambdaProgram {
     }
 
     public static void main(String[] args) {
+        String str1 = "World";
+        String str2 = "Hello";
 
         getMessage(() -> {
-            String mes = "Message: ";
-            System.out.println(mes+ItFunctionalInterface.s);
+            System.out.println(ItFunctionalInterface.S);
         });
 
         getMessage((s) -> {
-            String s1 = s + "Hello world";
-            System.out.println(s1);
-            return s1;
+            System.out.println(s+str1);
+            return s+str1;
         });
-
-        changeWord("World", "Hello", (s1,s2) -> {
+        changeWord(str1, str2, (s1,s2) -> {
             String s3 = s2 + " " + s1;
             System.out.println(s3);
             return s3;
@@ -45,20 +44,20 @@ public class LambdaProgram {
         MessageFunctionInterface messageFunctionInterface = new MessageFunctionInterface() {
             @Override
             public String get(String mes) {
-                return MessageFunctionInterface.s + mes;
+                return MessageFunctionInterface.S + mes;
             }
         };
 
-        System.out.println(messageFunctionInterface.get("World"));
+        System.out.println(messageFunctionInterface.get(str1));
 
         ChangeFunctionInterface changeFunctionInterface = new ChangeFunctionInterface() {
             @Override
             public String str(String s1, String s2) {
-                return s2 + s1;
+                return s2 + " " + s1;
             }
         };
 
-        System.out.println(changeFunctionInterface.str(" Hello", "World"));
+        System.out.println(changeFunctionInterface.str(str1, str2));
 
     }
 }

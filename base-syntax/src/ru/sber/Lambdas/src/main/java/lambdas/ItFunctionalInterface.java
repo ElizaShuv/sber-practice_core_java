@@ -1,7 +1,6 @@
 package lambdas;
-
 @FunctionalInterface
 public interface ItFunctionalInterface {
-    String s = "It function interface";
+    String S = "It function interface";
     void out();
 }
