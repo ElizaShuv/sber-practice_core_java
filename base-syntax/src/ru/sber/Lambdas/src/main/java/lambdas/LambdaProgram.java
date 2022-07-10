@@ -2,16 +2,16 @@ package lambdas;
 
 public class LambdaProgram {
 
-    public static String getMessage(ItFunctionalInterface message) {
-        return message.out();
+    public static void getMessage(ItFunctionalInterface message) {
+        message.out();
     }
 
-    public static String getMessage(MessageFunctionInterface<String> message) {
-        return message.get(MessageFunctionInterface.S);
+    public static void getMessage(MessageFunctionInterface<String> message) {
+        message.get(MessageFunctionInterface.S);
     }
 
-    public static String changeWord(String s1, String s2, ChangeFunctionInterface word) {
-        return word.str(s1, s2);
+    public static void changeWord(String s1, String s2, ChangeFunctionInterface word) {
+        word.str(s1, s2);
     }
 
     public static void main(String[] args) {
