@@ -2,6 +2,8 @@ package lambdas;
 
 import org.junit.Test;
 
+import static lambdas.LambdaProgram.changeWord;
+import static lambdas.LambdaProgram.getMessage;
 import static org.junit.Assert.assertEquals;
 
 
@@ -43,5 +45,20 @@ public class TestLambdaProgram {
             }
         };
         assertEquals(TEST_STR, changeFunctionInterface.str(TEST_STR2, TEST_STR1));
+    }
+
+    @Test
+    public void fourthTest() {
+        getMessage(() -> ItFunctionalInterface.S);
+    }
+
+    @Test
+    public void fifthTest() {
+        getMessage((s) -> s + TEST_STR2);
+    }
+
+    @Test
+    public void sixthTest() {
+        changeWord(TEST_STR2, TEST_STR1, (s1, s2) -> s2 + " " + s1);
     }
 }
